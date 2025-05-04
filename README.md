@@ -3,7 +3,7 @@
 This repository contains a web-based application for Detecting dry fish images and providing explainable AI (XAI) visualizations using Eigen-CAM.
 
 ## Demo App: 
-- Link: https://dry-fish-xai-caeyevtxdywvun96usmgbq.streamlit.app/
+- Link: https://verbose-space-guide-57v5r6g5rw4h45r6-8502.app.github.dev/
 
 ## Features
 - **Dry Fish Detection**: Uses a Yolov models trained on 11 different dry fish categories.
