@@ -224,7 +224,7 @@ elif mode == "Detection":
                         st.success(f"Detected {count} Dry Fish instance(s).")
                     else:
                         st.info("No Dry Fish detected.")
-                        
+
                 except Exception as e:
                     st.error(f"Error during detection: {e}")
 
