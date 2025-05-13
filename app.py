@@ -224,24 +224,7 @@ elif mode == "Detection":
                         st.success(f"Detected {count} Dry Fish instance(s).")
                     else:
                         st.info("No Dry Fish detected.")
-
-                # ============ 🔍 EigenCAM XAI Visualization ============
-                    st.subheader("📊 EigenCAM Visualization")
-                    cam_input = model.transforms(image)[0].unsqueeze(0)
-                    raw_model = model.model
-                    target_layers = [raw_model.model[-2]]  # Last conv layer
-
-                    with EigenCAM(model=raw_model, target_layers=target_layers, use_cuda=torch.cuda.is_available()) as cam:
-                        grayscale_cam = cam(input_tensor=cam_input)[0]
-
-                    rgb_img = np.float32(image_np) / 255
-                    cam_image = show_cam_on_image(rgb_img, grayscale_cam, use_rgb=True)
-
-                    st.image(cam_image, caption="EigenCAM Attention Map", use_column_width=True)
-                    combined = np.hstack((image_np, cam_image))
-                    st.image(combined, caption="Original + CAM", use_column_width=True)
-                # ========================================================
-
+                        
                 except Exception as e:
                     st.error(f"Error during detection: {e}")
 
